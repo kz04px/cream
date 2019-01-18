@@ -1,11 +1,10 @@
 #ifndef ENGINE_HPP_INCLUDED
 #define ENGINE_HPP_INCLUDED
 
-#include <iostream>
+#include <string>
 #include "logging/logging.hpp"
 #include "window/linux-window.hpp"
 #include "events/event.hpp"
-#include "events/window-event.hpp"
 
 namespace cream
 {

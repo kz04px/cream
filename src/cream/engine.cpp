@@ -7,6 +7,7 @@
 #include "window/linux-window.hpp"
 #include "events/event.hpp"
 #include "events/mouse-event.hpp"
+#include "events/window-event.hpp"
 
 namespace cream
 {

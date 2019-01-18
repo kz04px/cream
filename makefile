@@ -1,5 +1,5 @@
-CC := g++
-TARGET := main
+CC     := g++
+TARGET := libcream.so
 
 BINDIR := bin
 OBJDIR := obj
@@ -7,9 +7,9 @@ SRCDIR := src
 
 SOURCES := $(shell find $(SRCDIR) -type f -name *.cpp)
 OBJECTS := $(patsubst $(SRCDIR)/%,$(OBJDIR)/%,$(SOURCES:.cpp=.o))
-CFLAGS := -std=c++17 -Wall -Wextra
-LIB    := -lglfw -lGLEW -lGL
-INC    := -I include
+CFLAGS  := -std=c++17 -Wall -Wextra -fPIC
+LIB     := -lglfw -lGLEW -lGL -shared
+INC     := -I include
 
 $(BINDIR)/$(TARGET): $(OBJECTS)
 	@echo "Linking..."
@@ -22,7 +22,7 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.cpp
 
 clean:
 	@echo "Cleaning...";
-	$(RM) -r $(OBJDIR) $(BINDIR)/$(TARGET) $(BINDIR)/$(TARGET)-debug
+	$(RM) -r $(OBJDIR) $(BINDIR)/libcream.so
 
 release:
 	$(MAKE) CFLAGS="$(CFLAGS) -O2 -DNDEBUG"
