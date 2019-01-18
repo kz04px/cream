@@ -28,6 +28,6 @@ release:
 	$(MAKE) CFLAGS="$(CFLAGS) -O2 -DNDEBUG"
 
 debug:
-	$(MAKE) CFLAGS="$(CFLAGS) -g" TARGET="$(TARGET)-debug"
+	$(MAKE) CFLAGS="$(CFLAGS) -g"
 
 .PHONY: clean
