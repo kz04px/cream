@@ -5,6 +5,7 @@
 #include "logging/logging.hpp"
 #include "window/linux-window.hpp"
 #include "events/event.hpp"
+#include "layers/layer-manager.hpp"
 
 namespace cream
 {
@@ -26,8 +27,11 @@ namespace cream
             void stop();
             void update();
             void print() const;
+            // Events
             void on_event(Event &e);
             bool on_window_close(Event &e);
+            // Layers
+            void push_layer(Layer *layer);
         private:
             // Engine statistics
             clock_t start_;
@@ -38,6 +42,7 @@ namespace cream
             // Other
             Logger log_;
             LinuxWindow window_;
+            LayerManager layer_manager_;
     };
 }
 

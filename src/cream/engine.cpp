@@ -29,10 +29,13 @@ namespace cream
         {
             case EventType::WindowCloseEvent:
                 on_window_close(e);
+                return;
                 break;
             default:
                 break;
         }
+
+        layer_manager_.pass_event(e);
     }
 
     bool Engine::on_window_close(Event &e)
@@ -100,6 +103,11 @@ namespace cream
     {
         std::cout << "debug_ = " << debug_ << std::endl;
         std::cout << "frame_ = " << frame_ << std::endl;
+    }
+
+    void Engine::push_layer(Layer *layer)
+    {
+        layer_manager_.push_layer(layer);
     }
 
     void Engine::update()
