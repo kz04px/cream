@@ -3,9 +3,9 @@
 
 #include <string>
 #include <fstream>
+#include <memory>
 
 // TODO:
-// -- Add a mutex to the log writing
 // -- Mirror log writing to the console
 //   -- Use colours
 // -- Filter depending on debug level
@@ -18,6 +18,7 @@ namespace cream
         public:
             Logger(const std::string filename);
             ~Logger();
+            static Logger &get_instance();
             void debug(const std::string text);
             void info(const std::string text);
             void warning(const std::string text);

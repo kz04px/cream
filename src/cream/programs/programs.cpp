@@ -1,18 +1,20 @@
-#include <iostream>
 #include <algorithm>
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 #include "programs.hpp"
+#include "../logging/logging.hpp"
 
 namespace cream
 {
     Program::Program()
     {
         program_ = glCreateProgram();
+        Logger::get_instance().info("Program created (" + std::to_string(value()) + ")");
     }
 
     Program::~Program()
     {
+        Logger::get_instance().info("Program destroyed (" + std::to_string(value()) + ")");
         glDeleteProgram(program_);
     }
 
@@ -35,7 +37,7 @@ namespace cream
 
         if(status == GL_FALSE)
         {
-            std::cout << "ERROR Program " + std::to_string(program_) + " code " + std::to_string(status) << std::endl;
+            Logger::get_instance().error("ERROR Program " + std::to_string(program_) + " code " + std::to_string(status));
         }
 
         return status == GL_TRUE;
@@ -46,6 +48,7 @@ namespace cream
         auto it = find(shaders_.begin(), shaders_.end(), shader.value());
         if(it == shaders_.end())
         {
+            Logger::get_instance().info("Program " + std::to_string(value()) + " attach shader " + std::to_string(shader.value()));
             shaders_.push_back(shader.value());
             glAttachShader(program_, shader.value());
         }
@@ -56,6 +59,7 @@ namespace cream
         auto it = find(shaders_.begin(), shaders_.end(), shader.value());
         if(it != shaders_.end())
         {
+            Logger::get_instance().info("Program " + std::to_string(value()) + " detach shader " + std::to_string(shader.value()));
             shaders_.erase(it);
             glDetachShader(program_, shader.value());
         }

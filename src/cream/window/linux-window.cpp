@@ -5,6 +5,7 @@
 #include "../events/mouse-event.hpp"
 #include "../events/keyboard-event.hpp"
 #include "../keys.hpp"
+#include "../logging/logging.hpp"
 
 namespace cream
 {
@@ -178,7 +179,7 @@ namespace cream
         GLenum err = glewInit();
         while((err = glGetError()) != GL_NO_ERROR)
         {
-            std::cout << "Error: " << err << std::endl;
+            Logger::get_instance().warning("glewInit() error " + std::to_string(err));
         }
     }
 

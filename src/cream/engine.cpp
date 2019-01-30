@@ -11,16 +11,16 @@
 
 namespace cream
 {
-    Engine::Engine() : log_("log.txt"), window_("3D Game Engine", 480, 480)
+    Engine::Engine() : window_("3D Game Engine", 480, 480)
     {
-        log_.info("Engine loaded");
+        Logger::get_instance().info("Engine loaded");
         start_ = time(0);
         window_.set_callback(std::bind(&Engine::on_event, this, std::placeholders::_1));
     }
 
     Engine::~Engine()
     {
-        log_.info("Engine exited");
+        Logger::get_instance().info("Engine exited");
     }
 
     void Engine::on_event(Event &e)
@@ -49,10 +49,10 @@ namespace cream
         std::ifstream file(path);
         if(!file.is_open())
         {
-            log_.warning("Settings file " + path + " not found.");
+            Logger::get_instance().warning("Settings file " + path + " not found.");
             return;
         }
-        log_.info("Loading settings file " + path);
+        Logger::get_instance().info("Loading settings file " + path);
 
         std::string line;
         while(getline(file, line))

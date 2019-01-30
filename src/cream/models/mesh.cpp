@@ -4,6 +4,7 @@
 #include <glm/gtx/string_cast.hpp> // glm::to_string
 #include "mesh.hpp"
 #include "materials.hpp"
+#include "../logging/logging.hpp"
 
 namespace cream
 {
@@ -45,8 +46,10 @@ namespace cream
         std::ifstream file(path);
         if(!file.is_open())
         {
+            Logger::get_instance().warning(".obj file " + path + " not found.");
             return;
         }
+        Logger::get_instance().info(".obj file " + path + " found.");
 
         std::string line;
         std::string word;
@@ -192,5 +195,7 @@ namespace cream
         v.clear();
         vt.clear();
         vn.clear();
+
+        Logger::get_instance().info(std::to_string(num_vertices_) + " vertices loaded.");
     }
 }

@@ -40,7 +40,6 @@ namespace cream
             bool run_ = true;
             bool debug_ = false;
             // Other
-            Logger log_;
             LinuxWindow window_;
             LayerManager layer_manager_;
     };

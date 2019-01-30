@@ -6,6 +6,7 @@
 #include <GLFW/glfw3.h>
 #include "shaders.hpp"
 #include "../utilities/utilities.hpp"
+#include "../logging/logging.hpp"
 
 namespace cream
 {
@@ -15,6 +16,7 @@ namespace cream
 
     Shader::~Shader()
     {
+        Logger::get_instance().info("Shader destroyed (" + std::to_string(value_) + ")");
         glDeleteShader(value_);
     }
 
@@ -35,6 +37,8 @@ namespace cream
                 break;
         }
 
+        Logger::get_instance().info("Shader created (" + std::to_string(value_) + ")");
+
         const char *source = text.c_str();
         int length = text.size();
         type_ = type;
@@ -50,6 +54,7 @@ namespace cream
 
         if(!t.is_open())
         {
+            Logger::get_instance().warning("Shader file " + path + " not found.");
             return;
         }
 
@@ -71,7 +76,7 @@ namespace cream
 
         if(status == GL_FALSE)
         {
-            //log("ERROR Shader " + std::to_string(shader) + " code " + std::to_string(status));
+            Logger::get_instance().error("Shader error " + std::to_string(status));
         }
 
         return status == GL_TRUE;
