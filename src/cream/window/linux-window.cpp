@@ -172,6 +172,14 @@ namespace cream
         glfwSetMouseButtonCallback(window_, callback_mouse_button);
         // Set callbacks -- Keyboard
         glfwSetKeyCallback(window_, callback_keyboard);
+
+        // Start GLEW extension handler
+        glewExperimental = GL_TRUE;
+        GLenum err = glewInit();
+        while((err = glGetError()) != GL_NO_ERROR)
+        {
+            std::cout << "Error: " << err << std::endl;
+        }
     }
 
     LinuxWindow::~LinuxWindow()

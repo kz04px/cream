@@ -1,6 +1,7 @@
 #ifndef LINUX_WINDOW_HPP_INCLUDED
 #define LINUX_WINDOW_HPP_INCLUDED
 
+#include <GL/glew.h>
 #include <GLFW/glfw3.h>
 #include "window.hpp"
 
