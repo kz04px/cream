@@ -17,6 +17,8 @@ namespace cream
             void pop_overlay(Layer *layer);
             // Events
             void pass_event(Event &event);
+            // Update
+            void update();
         private:
             std::vector<Layer*> layers_;
     };

@@ -112,7 +112,12 @@ namespace cream
 
     void Engine::update()
     {
-        window_.update();
+        window_.clear();
+
+        layer_manager_.update();
+
+        window_.swap_buffer();
+        window_.poll_events();
 
         frame_++;
     }

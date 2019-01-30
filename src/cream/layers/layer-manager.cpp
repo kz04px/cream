@@ -48,4 +48,12 @@ namespace cream
             }
         }
     }
+
+    void LayerManager::update()
+    {
+        for(auto &layer : layers_)
+        {
+            layer->on_update();
+        }
+    }
 }

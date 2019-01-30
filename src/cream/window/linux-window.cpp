@@ -215,10 +215,21 @@ namespace cream
 
     void LinuxWindow::update()
     {
+    }
+
+    void LinuxWindow::clear()
+    {
         glClearColor(0.529, 0.808, 0.922, 1.0);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    }
 
+    void LinuxWindow::swap_buffer()
+    {
         glfwSwapBuffers(window_);
+    }
+
+    void LinuxWindow::poll_events()
+    {
         glfwPollEvents();
     }
 }
