@@ -15,17 +15,17 @@ namespace cream
     {
         if(GLFW_KEY_0 <= key && key <= GLFW_KEY_9)
         {
-            const int offset = key - CREAM_KEY_0;
+            const int offset = key - GLFW_KEY_0;
             return CREAM_KEY_0 + offset;
         }
         else if(GLFW_KEY_A <= key && key <= GLFW_KEY_Z)
         {
             const int offset = key - GLFW_KEY_A;
-            return GLFW_KEY_A + offset;
+            return CREAM_KEY_A + offset;
         }
         else if(GLFW_KEY_ESCAPE <= key && key <= GLFW_KEY_UP)
         {
-            const int offset = key - CREAM_KEY_ESCAPE;
+            const int offset = key - GLFW_KEY_ESCAPE;
             return CREAM_KEY_ESCAPE + offset;
         }
         else if(key == GLFW_KEY_SPACE)
@@ -34,17 +34,17 @@ namespace cream
         }
         else if(GLFW_KEY_F1 <= key && key <= GLFW_KEY_F12)
         {
-            const int offset = key - CREAM_KEY_F1;
+            const int offset = key - GLFW_KEY_F1;
             return CREAM_KEY_F1 + offset;
         }
         else if(GLFW_KEY_LEFT_SHIFT <= key && key <= GLFW_KEY_LEFT_ALT)
         {
-            const int offset = key - CREAM_KEY_LEFT_SHIFT;
+            const int offset = key - GLFW_KEY_LEFT_SHIFT;
             return CREAM_KEY_LEFT_SHIFT + offset;
         }
         else if(GLFW_KEY_RIGHT_SHIFT <= key && key <= GLFW_KEY_RIGHT_ALT)
         {
-            const int offset = key - CREAM_KEY_RIGHT_SHIFT;
+            const int offset = key - GLFW_KEY_RIGHT_SHIFT;
             return CREAM_KEY_RIGHT_SHIFT + offset;
         }
         else
