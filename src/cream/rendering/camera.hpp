@@ -26,12 +26,43 @@ namespace cream
     		float far_ = 1000.0;
     };
 
-    glm::mat4 Camera::matrix() const
+    class CameraFPS
     {
-    	const glm::mat4 projection = glm::ortho(-20.0f*aspect_, 20.0f*aspect_, -20.0f, 20.0f, near_, far_);
-    	const glm::mat4 view = glm::lookAt(eye_, center_, up_);
-    	return projection * view;
-    }
+        public:
+            glm::mat4 matrix() const;
+            void position(const glm::vec3 &v) {position_ = v;}
+            // View
+            void pitch(const float &f) {pitch_ = f;}
+            void yaw(const float &f) {yaw_ = f;}
+            void roll(const float &f) {roll_ = f;}
+            // Projection
+    		void fov(const float &f) {fov_ = f;}
+    		void aspect(const float &f) {aspect_ = f;}
+    		void aspect(const int &w, const int &h) {aspect_ = (float)w/h;}
+            // Movement
+            void move_up(const float &speed);
+            void move_down(const float &speed);
+            void move_forward(const float &speed);
+            void move_backward(const float &speed);
+            void move_left(const float &speed);
+            void move_right(const float &speed);
+            // View changes
+            void pitch_add(const float &f) {pitch_ += f;}
+            void yaw_add(const float &f) {yaw_ += f;}
+            void roll_add(const float &f) {roll_ += f;}
+        private:
+    		glm::vec3 position_{0.0, 0.0, 15.0};
+            // View
+            float pitch_ = 0.0;
+            float yaw_ = 0.0;
+            float roll_ = 0.0;
+            // Projection
+    		float fov_ = 0.45;
+    		float aspect_ = 1.0;
+    		float near_ = 0.1;
+    		float far_ = 1000.0;
+            float zoom_ = 1.0;
+    };
 }
 
 #endif
