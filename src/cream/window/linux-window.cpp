@@ -188,4 +188,8 @@ void LinuxWindow::poll_events() {
     glfwPollEvents();
 }
 
+void LinuxWindow::resize(const int w, const int h) {
+    glViewport(0, 0, w, h);
+}
+
 }  // namespace cream

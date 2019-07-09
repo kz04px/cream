@@ -4,6 +4,7 @@
 #include <string>
 #include "clog/clog.hpp"
 #include "events/event.hpp"
+#include "events/window-event.hpp"
 #include "layers/layer-manager.hpp"
 #include "window/linux-window.hpp"
 
@@ -28,7 +29,8 @@ class Engine {
     void print() const;
     // Events
     void on_event(Event &e);
-    bool on_window_close(Event &e);
+    bool on_window_close(WindowCloseEvent &e);
+    bool on_window_resize(WindowResizeEvent &e);
     // Layers
     void push_layer(Layer *layer);
 

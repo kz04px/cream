@@ -6,7 +6,6 @@
 #include <sstream>
 #include "events/event.hpp"
 #include "events/mouse-event.hpp"
-#include "events/window-event.hpp"
 #include "window/linux-window.hpp"
 
 namespace cream {
@@ -24,8 +23,10 @@ Engine::~Engine() {
 void Engine::on_event(Event &e) {
     switch (e.type()) {
         case EventType::WindowCloseEvent:
-            on_window_close(e);
+            on_window_close(static_cast<WindowCloseEvent &>(e));
             return;
+        case EventType::WindowResizeEvent:
+            on_window_resize(static_cast<WindowResizeEvent &>(e));
             break;
         default:
             break;
@@ -34,8 +35,13 @@ void Engine::on_event(Event &e) {
     layer_manager_.pass_event(e);
 }
 
-bool Engine::on_window_close(Event &e) {
+bool Engine::on_window_close(WindowCloseEvent &e) {
     stop();
+    return true;
+}
+
+bool Engine::on_window_resize(WindowResizeEvent &e) {
+    window_.resize(e.width(), e.height());
     return true;
 }
 

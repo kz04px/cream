@@ -45,6 +45,7 @@ class Window {
     bool fullscreen() {
         return data_.fullscreen_;
     }
+    virtual void resize(const int w, const int h) = 0;
 
    protected:
     WindowData data_;

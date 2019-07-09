@@ -20,6 +20,7 @@ class LinuxWindow : public Window {
     void clear();
     void swap_buffer();
     void poll_events();
+    void resize(const int w, const int h) override;
 
    private:
     GLFWwindow *window_ = nullptr;
