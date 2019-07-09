@@ -5,7 +5,7 @@
 #include "../events/mouse-event.hpp"
 #include "../events/window-event.hpp"
 #include "../keys.hpp"
-#include "../logging/logging.hpp"
+#include "clog/clog.hpp"
 
 namespace cream {
 
@@ -142,7 +142,7 @@ LinuxWindow::LinuxWindow(const std::string title, const int width, const int hei
     glewExperimental = GL_TRUE;
     GLenum err = glewInit();
     while ((err = glGetError()) != GL_NO_ERROR) {
-        Logger::get_instance().warning("glewInit() error " + std::to_string(err));
+        clog::Log::get()->warn("glewInit() error ", err);
     }
 }
 

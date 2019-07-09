@@ -1,16 +1,16 @@
 #include "programs.hpp"
 #include <algorithm>
-#include "../logging/logging.hpp"
+#include "clog/clog.hpp"
 
 namespace cream {
 
 Program::Program() {
     program_ = glCreateProgram();
-    Logger::get_instance().info("Program created (" + std::to_string(value()) + ")");
+    clog::Log::get()->info("Program created (", value(), ")");
 }
 
 Program::~Program() {
-    Logger::get_instance().info("Program destroyed (" + std::to_string(value()) + ")");
+    clog::Log::get()->info("Program destroyed (", value(), ")");
     glDeleteProgram(program_);
 }
 
@@ -29,8 +29,7 @@ bool Program::valid() const {
     glGetProgramiv(program_, GL_LINK_STATUS, &status);
 
     if (status == GL_FALSE) {
-        Logger::get_instance().error("ERROR Program " + std::to_string(program_) + " code " +
-                                     std::to_string(status));
+        clog::Log::get()->error("ERROR Program ", program_, " code ", status);
     }
 
     return status == GL_TRUE;
@@ -39,8 +38,7 @@ bool Program::valid() const {
 void Program::attach(const Shader &shader) {
     auto it = find(shaders_.begin(), shaders_.end(), shader.value());
     if (it == shaders_.end()) {
-        Logger::get_instance().info("Program " + std::to_string(value()) + " attach shader " +
-                                    std::to_string(shader.value()));
+        clog::Log::get()->info("Program ", value(), " attach shader ", shader.value());
         shaders_.push_back(shader.value());
         glAttachShader(program_, shader.value());
     }
@@ -49,8 +47,7 @@ void Program::attach(const Shader &shader) {
 void Program::detach(const Shader &shader) {
     auto it = find(shaders_.begin(), shaders_.end(), shader.value());
     if (it != shaders_.end()) {
-        Logger::get_instance().info("Program " + std::to_string(value()) + " detach shader " +
-                                    std::to_string(shader.value()));
+        clog::Log::get()->info("Program ", value(), " detach shader ", shader.value());
         shaders_.erase(it);
         glDetachShader(program_, shader.value());
     }

@@ -3,8 +3,7 @@
 #include <fstream>
 #include <sstream>
 #include <string>
-#include "../logging/logging.hpp"
-#include "../utilities/utilities.hpp"
+#include "clog/clog.hpp"
 
 namespace cream {
 
@@ -12,7 +11,7 @@ Shader::Shader() {
 }
 
 Shader::~Shader() {
-    Logger::get_instance().info("Shader destroyed (" + std::to_string(value_) + ")");
+    clog::Log::get()->info("Shader destroyed (", value_, ")");
     glDeleteShader(value_);
 }
 
@@ -31,7 +30,7 @@ void Shader::load_text(const ShaderType &type, const std::string &text) {
             break;
     }
 
-    Logger::get_instance().info("Shader created (" + std::to_string(value_) + ")");
+    clog::Log::get()->info("Shader created (", value_, ")");
 
     const char *source = text.c_str();
     int length = text.size();
@@ -46,7 +45,7 @@ void Shader::load_file(const ShaderType &type, const std::string &path) {
     std::ifstream t(path);
 
     if (!t.is_open()) {
-        Logger::get_instance().warning("Shader file " + path + " not found.");
+        clog::Log::get()->warn("Shader file ", path, " not found.");
         return;
     }
 
@@ -65,7 +64,7 @@ bool Shader::valid() const {
     glGetShaderiv(value_, GL_COMPILE_STATUS, &status);
 
     if (status == GL_FALSE) {
-        Logger::get_instance().error("Shader error " + std::to_string(status));
+        clog::Log::get()->error("Shader error ", status);
     }
 
     return status == GL_TRUE;

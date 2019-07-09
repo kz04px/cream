@@ -12,13 +12,13 @@
 namespace cream {
 
 Engine::Engine() : window_("3D Game Engine", 480, 480) {
-    Logger::get_instance().info("Engine loaded");
+    clog::Log::get()->info("Engine loaded");
     start_ = time(0);
     window_.set_callback(std::bind(&Engine::on_event, this, std::placeholders::_1));
 }
 
 Engine::~Engine() {
-    Logger::get_instance().info("Engine exited");
+    clog::Log::get()->info("Engine exited");
 }
 
 void Engine::on_event(Event &e) {
@@ -42,10 +42,10 @@ bool Engine::on_window_close(Event &e) {
 void Engine::load_settings(const std::string path) {
     std::ifstream file(path);
     if (!file.is_open()) {
-        Logger::get_instance().warning("Settings file " + path + " not found.");
+        clog::Log::get()->warn("Settings file ", path, " not found.");
         return;
     }
-    Logger::get_instance().info("Loading settings file " + path);
+    clog::Log::get()->info("Loading settings file ", path);
 
     std::string line;
     while (getline(file, line)) {

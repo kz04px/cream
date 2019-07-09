@@ -2,9 +2,9 @@
 #define ENGINE_HPP_INCLUDED
 
 #include <string>
+#include "clog/clog.hpp"
 #include "events/event.hpp"
 #include "layers/layer-manager.hpp"
-#include "logging/logging.hpp"
 #include "window/linux-window.hpp"
 
 namespace cream {
