@@ -3,10 +3,11 @@
 
 #include <string>
 
-namespace utilities
-{
-    const std::string current_date();
-    const std::string current_time();
-}
+namespace utilities {
+
+const std::string current_date();
+const std::string current_time();
+
+}  // namespace utilities
 
 #endif
