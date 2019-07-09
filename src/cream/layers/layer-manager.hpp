@@ -1,10 +1,12 @@
 #ifndef LAYER_MANAGER_HPP_INCLUDED
 #define LAYER_MANAGER_HPP_INCLUDED
 
-#include "../events/event.hpp"
-#include "layer.hpp"
+#include <vector>
 
 namespace cream {
+
+class Layer;
+class Event;
 
 class LayerManager {
    public:

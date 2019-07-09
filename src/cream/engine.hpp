@@ -2,13 +2,14 @@
 #define ENGINE_HPP_INCLUDED
 
 #include <string>
-#include "clog/clog.hpp"
-#include "events/event.hpp"
-#include "events/window-event.hpp"
 #include "layers/layer-manager.hpp"
 #include "window/linux-window.hpp"
 
 namespace cream {
+
+class Event;
+class WindowCloseEvent;
+class WindowResizeEvent;
 
 const std::string version_major = "0";
 const std::string version_minor = "1";
@@ -22,7 +23,7 @@ class Engine {
    public:
     Engine();
     ~Engine();
-    void load_settings(const std::string path);
+    void load_settings(const std::string &path);
     bool run() const;
     void stop();
     void update();

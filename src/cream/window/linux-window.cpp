@@ -1,4 +1,6 @@
 #include "linux-window.hpp"
+#include <GL/glew.h>
+#include <GLFW/glfw3.h>
 #include <cassert>
 #include <iostream>
 #include "../events/keyboard-event.hpp"
@@ -100,7 +102,7 @@ void callback_keyboard(GLFWwindow *window, int key, int scancode, int action, in
     }
 }
 
-LinuxWindow::LinuxWindow(const std::string title, const int width, const int height) {
+LinuxWindow::LinuxWindow(const std::string &title, const int width, const int height) {
     data_.title_ = title;
     data_.width_ = width;
     data_.height_ = height;
@@ -153,7 +155,7 @@ LinuxWindow::~LinuxWindow() {
     glfwTerminate();
 }
 
-void LinuxWindow::title(const std::string title) {
+void LinuxWindow::title(const std::string &title) {
     data_.title_ = title;
     glfwSetWindowTitle(window_, title.c_str());
 }

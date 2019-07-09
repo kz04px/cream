@@ -35,7 +35,7 @@ void Mesh::clear() {
     normals_.clear();
 }
 
-void Mesh::load_obj(const std::string path) {
+void Mesh::load_obj(const std::string &path) {
     std::ifstream file(path);
     if (!file.is_open()) {
         clog::Log::get()->warn(".obj file ", path, " not found.");

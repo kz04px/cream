@@ -1,9 +1,12 @@
 #ifndef INSTANCE_HPP_INCLUDED
 #define INSTANCE_HPP_INCLUDED
 
-#include "../models/mesh.hpp"
+#include <glm/glm.hpp>
+#include <vector>
 
 namespace cream {
+
+class Mesh;
 
 class Instance {
    public:

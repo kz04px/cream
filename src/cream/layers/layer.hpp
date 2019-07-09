@@ -1,9 +1,9 @@
 #ifndef LAYERS_HPP_INCLUDED
 #define LAYERS_HPP_INCLUDED
 
-#include "../events/event.hpp"
-
 namespace cream {
+
+class Event;
 
 class Layer {
    public:

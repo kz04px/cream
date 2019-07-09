@@ -1,4 +1,6 @@
 #include "layer-manager.hpp"
+#include "../events/event.hpp"
+#include "layer.hpp"
 
 namespace cream {
 

@@ -4,8 +4,10 @@
 #include <ctime>
 #include <iostream>
 #include <sstream>
+#include "clog/clog.hpp"
 #include "events/event.hpp"
 #include "events/mouse-event.hpp"
+#include "events/window-event.hpp"
 #include "window/linux-window.hpp"
 
 namespace cream {
@@ -45,7 +47,7 @@ bool Engine::on_window_resize(WindowResizeEvent &e) {
     return true;
 }
 
-void Engine::load_settings(const std::string path) {
+void Engine::load_settings(const std::string &path) {
     std::ifstream file(path);
     if (!file.is_open()) {
         clog::Log::get()->warn("Settings file ", path, " not found.");

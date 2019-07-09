@@ -1,5 +1,6 @@
 #include "programs.hpp"
 #include <algorithm>
+#include "../shaders/shaders.hpp"
 #include "clog/clog.hpp"
 
 namespace cream {

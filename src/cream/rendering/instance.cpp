@@ -1,6 +1,7 @@
 #include "instance.hpp"
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
+#include "../models/mesh.hpp"
 
 namespace cream {
 

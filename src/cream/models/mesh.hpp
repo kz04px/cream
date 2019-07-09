@@ -11,7 +11,7 @@ class Mesh {
    public:
     Mesh();
     ~Mesh();
-    void load_obj(const std::string path);
+    void load_obj(const std::string &path);
     void print();
     void clear();
     int num_vertices() const {

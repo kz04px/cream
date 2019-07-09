@@ -4,9 +4,10 @@
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 #include <vector>
-#include "../shaders/shaders.hpp"
 
 namespace cream {
+
+class Shader;
 
 class Program {
    public:

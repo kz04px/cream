@@ -1,11 +1,13 @@
 #ifndef WINDOW_HPP_INCLUDED
 #define WINDOW_HPP_INCLUDED
 
+#include <cstring>
 #include <functional>
 #include <memory>
-#include "../events/event.hpp"
 
 namespace cream {
+
+class Event;
 
 struct WindowData {
     std::string title_ = "untitled";
@@ -34,7 +36,7 @@ class Window {
     std::string title() {
         return data_.title_;
     }
-    virtual void title(const std::string title) = 0;
+    virtual void title(const std::string &title) = 0;
     // Others
     int width() {
         return data_.width_;

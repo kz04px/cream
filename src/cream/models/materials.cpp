@@ -7,7 +7,7 @@
 
 namespace cream {
 
-void Materials::load(const std::string path) {
+void Materials::load(const std::string &path) {
     std::ifstream file(path);
     if (!file.is_open()) {
         return;
@@ -74,11 +74,11 @@ void Materials::add(Material &material) {
     assert(has(material.name_));
 }
 
-bool Materials::has(const std::string name) {
+bool Materials::has(const std::string &name) {
     return materials_.find(name) != materials_.end();
 }
 
-Material &Materials::find(const std::string name) {
+Material &Materials::find(const std::string &name) {
     if (has(name)) {
         return materials_[name];
     }
@@ -87,7 +87,7 @@ Material &Materials::find(const std::string name) {
     return basic_;
 }
 
-void Materials::erase(const std::string name) {
+void Materials::erase(const std::string &name) {
     materials_.erase(name);
     assert(!has(name));
 }
