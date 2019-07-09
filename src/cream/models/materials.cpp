@@ -1,3 +1,4 @@
+#define GLM_ENABLE_EXPERIMENTAL
 #include <fstream>
 #include <iostream>
 #include <glm/gtx/string_cast.hpp> // glm::to_string
