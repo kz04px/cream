@@ -18,13 +18,13 @@ class KeyPressEvent : public Event {
     std::string string() const override {
         return "KeyPressEvent";
     }
-    int key() {
+    int key() const {
         return key_;
     }
-    int scancode() {
+    int scancode() const {
         return scancode_;
     }
-    int mods() {
+    int mods() const {
         return mods_;
     }
 
@@ -47,13 +47,13 @@ class KeyReleaseEvent : public Event {
     std::string string() const override {
         return "KeyReleaseEvent";
     }
-    int key() {
+    int key() const {
         return key_;
     }
-    int scancode() {
+    int scancode() const {
         return scancode_;
     }
-    int mods() {
+    int mods() const {
         return mods_;
     }
 
@@ -76,13 +76,13 @@ class KeyRepeatEvent : public Event {
     std::string string() const override {
         return "KeyRepeatEvent";
     }
-    int key() {
+    int key() const{
         return key_;
     }
-    int scancode() {
+    int scancode() const{
         return scancode_;
     }
-    int mods() {
+    int mods()const {
         return mods_;
     }
 

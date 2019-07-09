@@ -74,7 +74,7 @@ void Materials::add(Material &material) {
     assert(has(material.name_));
 }
 
-bool Materials::has(const std::string &name) {
+bool Materials::has(const std::string &name) const {
     return materials_.find(name) != materials_.end();
 }
 
@@ -92,7 +92,7 @@ void Materials::erase(const std::string &name) {
     assert(!has(name));
 }
 
-void Materials::print() {
+void Materials::print() const {
     for (auto const &[key, material] : materials_) {
         std::cout << "Material: " << material.name_ << std::endl;
     }

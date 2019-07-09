@@ -18,10 +18,10 @@ class WindowResizeEvent : public Event {
     std::string string() const override {
         return "WindowResizeEvent";
     }
-    int width() {
+    int width() const {
         return width_;
     }
-    int height() {
+    int height() const {
         return height_;
     }
 

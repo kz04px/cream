@@ -23,10 +23,10 @@ class Materials {
    public:
     void load(const std::string &path);
     void add(Material &material);
-    bool has(const std::string &name);
+    bool has(const std::string &name) const;
     Material &find(const std::string &name);
     void erase(const std::string &name);
-    void print();
+    void print() const;
 
    private:
     Material basic_;

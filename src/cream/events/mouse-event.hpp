@@ -18,13 +18,13 @@ class MouseDownEvent : public Event {
     std::string string() const override {
         return "MouseDownEvent";
     }
-    int x() {
+    int x() const {
         return x_;
     }
-    int y() {
+    int y() const {
         return y_;
     }
-    int button() {
+    int button() const {
         return button_;
     }
 
@@ -47,13 +47,13 @@ class MouseUpEvent : public Event {
     std::string string() const override {
         return "MouseUpEvent";
     }
-    int x() {
+    int x() const {
         return x_;
     }
-    int y() {
+    int y() const {
         return y_;
     }
-    int button() {
+    int button() const {
         return button_;
     }
 
@@ -76,10 +76,10 @@ class MouseMoveEvent : public Event {
     std::string string() const override {
         return "MouseMoveEvent";
     }
-    int x() {
+    int x() const {
         return x_;
     }
-    int y() {
+    int y() const {
         return y_;
     }
 
