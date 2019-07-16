@@ -76,4 +76,10 @@ Shader Shader::from_string(const ShaderType &type, const std::string &text) {
     return s;
 }
 
+Shader Shader::from_file(const ShaderType &type, const std::string &path) {
+    Shader s;
+    s.load_file(type, path);
+    return s;
+}
+
 }  // namespace cream

@@ -22,6 +22,7 @@ class Shader {
     GLuint value() const;
     bool valid() const;
     static Shader from_string(const ShaderType &type, const std::string &text);
+    static Shader from_file(const ShaderType &type, const std::string &path);
 
    private:
     ShaderType type_;
