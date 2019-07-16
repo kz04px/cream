@@ -70,4 +70,10 @@ bool Shader::valid() const {
     return status == GL_TRUE;
 }
 
+Shader Shader::from_string(const ShaderType &type, const std::string &text) {
+    Shader s;
+    s.load_text(type, text);
+    return s;
+}
+
 }  // namespace cream
