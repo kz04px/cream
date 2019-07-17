@@ -18,10 +18,6 @@ Program::~Program() {
 void Program::link() {
     glLinkProgram(program_);
 
-    for (auto &s : shaders_) {
-        glDetachShader(program_, s);
-    }
-
     linked_ = true;
 }
 
