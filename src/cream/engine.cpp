@@ -6,8 +6,10 @@
 #include <sstream>
 #include "clog/clog.hpp"
 #include "events/event.hpp"
+#include "events/keyboard-event.hpp"
 #include "events/mouse-event.hpp"
 #include "events/window-event.hpp"
+#include "input.hpp"
 #include "window/linux-window.hpp"
 
 namespace cream {
@@ -24,6 +26,12 @@ Engine::~Engine() {
 
 void Engine::on_event(Event &e) {
     switch (e.type()) {
+        case EventType::KeyPressEvent:
+            on_key_press(static_cast<KeyPressEvent &>(e));
+            return;
+        case EventType::KeyReleaseEvent:
+            on_key_release(static_cast<KeyReleaseEvent &>(e));
+            return;
         case EventType::WindowCloseEvent:
             on_window_close(static_cast<WindowCloseEvent &>(e));
             return;
@@ -35,6 +43,18 @@ void Engine::on_event(Event &e) {
     }
 
     layer_manager_.pass_event(e);
+}
+
+bool Engine::on_key_press(KeyPressEvent &e) {
+    assert(0 <= e.key() && e.key() < 512);
+    inputs::key_states[e.key()] = true;
+    return true;
+}
+
+bool Engine::on_key_release(KeyReleaseEvent &e) {
+    assert(0 <= e.key() && e.key() < 512);
+    inputs::key_states[e.key()] = false;
+    return true;
 }
 
 bool Engine::on_window_close(WindowCloseEvent &e) {

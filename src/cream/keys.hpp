@@ -3,7 +3,7 @@
 
 namespace cream {
 
-enum
+enum Keys : int
 {
     CREAM_KEY_NONE = 0,
     // Group 1

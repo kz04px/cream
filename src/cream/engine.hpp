@@ -8,6 +8,8 @@
 namespace cream {
 
 class Event;
+class KeyPressEvent;
+class KeyReleaseEvent;
 class WindowCloseEvent;
 class WindowResizeEvent;
 
@@ -30,6 +32,8 @@ class Engine {
     void print() const;
     // Events
     void on_event(Event &e);
+    bool on_key_press(KeyPressEvent &e);
+    bool on_key_release(KeyReleaseEvent &e);
     bool on_window_close(WindowCloseEvent &e);
     bool on_window_resize(WindowResizeEvent &e);
     // Layers
