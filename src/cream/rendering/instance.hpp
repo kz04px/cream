@@ -1,8 +1,11 @@
 #ifndef INSTANCE_HPP_INCLUDED
 #define INSTANCE_HPP_INCLUDED
 
+#include <GL/glew.h>
+#include <GLFW/glfw3.h>
 #include <glm/glm.hpp>
 #include <vector>
+#include "../programs/programs.hpp"
 
 namespace cream {
 
@@ -21,15 +24,17 @@ class Instance {
    private:
     int num_vertices_ = 0;
     int num_instances_ = 0;
-    unsigned int vao_;
+    GLuint vao_;
     // Mesh
-    unsigned int vbo_;  // Vertices
-    unsigned int cbo_;  // Colours
-    unsigned int nbo_;  // Normals
+    GLuint vbo_;  // Vertices
+    GLuint cbo_;  // Colours
+    GLuint nbo_;  // Normals
     // Instances
-    unsigned int rbo_;  // Rotations
-    unsigned int tbo_;  // Translations
-    unsigned int sbo_;  // Scales
+    GLuint rbo_;  // Rotations
+    GLuint tbo_;  // Translations
+    GLuint sbo_;  // Scales
+    // Program
+    Program program_;
 };
 
 }  // namespace cream

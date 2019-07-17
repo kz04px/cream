@@ -1,11 +1,23 @@
 #include "instance.hpp"
-#include <GL/glew.h>
-#include <GLFW/glfw3.h>
 #include "../models/mesh.hpp"
+#include "../shaders/shaders.hpp"
 
 namespace cream {
 
 Instance::Instance() {
+    // Program
+    auto vs = Shader::from_file(ShaderType::VERTEX_SHADER,
+                                "./resources/shaders/instance/vertex_shader.glsl");
+    auto fs = Shader::from_file(ShaderType::FRAGMENT_SHADER,
+                                "./resources/shaders/instance/fragment_shader.glsl");
+    program_.attach(vs);
+    program_.attach(fs);
+    program_.link();
+    program_.detach(vs);
+    program_.detach(fs);
+
+    program_.use();
+
     glGenVertexArrays(1, &vao_);
     glBindVertexArray(vao_);
 
