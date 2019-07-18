@@ -1,4 +1,6 @@
 #include "instance.hpp"
+#include <glm/gtc/type_ptr.hpp>
+#include "../camera/camera.hpp"
 #include "../models/mesh.hpp"
 #include "../shaders/shaders.hpp"
 
@@ -122,7 +124,7 @@ void Instance::buffer_instances(const std::vector<glm::vec3> &rotations,
     glBufferData(GL_ARRAY_BUFFER, scales.size() * sizeof(glm::vec3), &scales[0], GL_STATIC_DRAW);
 }
 
-void Instance::render() const {
+void Instance::render(const Camera &camera) const {
     assert(num_vertices_ >= 0);
     assert(num_instances_ >= 0);
 
@@ -130,6 +132,8 @@ void Instance::render() const {
         return;
     }
 
+    glm::mat4 view = camera.matrix();
+    glUniformMatrix4fv(0, 1, GL_FALSE, glm::value_ptr(view));
     glBindVertexArray(vao_);
     glDrawArraysInstanced(GL_TRIANGLES, 0, num_vertices_, num_instances_);
 }

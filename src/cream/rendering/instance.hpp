@@ -10,6 +10,7 @@
 namespace cream {
 
 class Mesh;
+class Camera;
 
 class Instance {
    public:
@@ -19,7 +20,7 @@ class Instance {
     void buffer_instances(const std::vector<glm::vec3> &rotations,
                           const std::vector<glm::vec3> &translations,
                           const std::vector<glm::vec3> &scales);
-    void render() const;
+    void render(const Camera &camera) const;
 
    private:
     int num_vertices_ = 0;
