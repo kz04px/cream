@@ -49,6 +49,9 @@ class Window {
     }
     virtual void resize(const int w, const int h) = 0;
 
+    virtual void hide_mouse() {};
+    virtual void show_mouse() {};
+
    protected:
     WindowData data_;
 };

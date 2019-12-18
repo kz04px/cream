@@ -22,6 +22,8 @@ class LinuxWindow : public Window {
     void swap_buffer();
     void poll_events();
     void resize(const int w, const int h) override;
+    void hide_mouse() override;
+    void show_mouse() override;
 
    private:
     GLFWwindow *window_ = nullptr;

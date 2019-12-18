@@ -194,4 +194,12 @@ void LinuxWindow::resize(const int w, const int h) {
     glViewport(0, 0, w, h);
 }
 
+void LinuxWindow::hide_mouse() {
+    glfwSetInputMode(window_, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+}
+
+void LinuxWindow::show_mouse() {
+    glfwSetInputMode(window_, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
+}
+
 }  // namespace cream
