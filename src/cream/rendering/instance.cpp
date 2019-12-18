@@ -59,7 +59,7 @@ Instance::Instance() {
     glGenBuffers(1, &sbo_);
     glBindBuffer(GL_ARRAY_BUFFER, sbo_);
     glEnableVertexAttribArray(5);
-    glVertexAttribPointer(5, 3, GL_FLOAT, GL_FALSE, 0, (char *)0 + 0 * sizeof(GLfloat));
+    glVertexAttribPointer(5, 1, GL_FLOAT, GL_FALSE, 0, (char *)0 + 0 * sizeof(GLfloat));
     glVertexAttribDivisor(5, 1);
 }
 
@@ -103,7 +103,7 @@ void Instance::buffer_mesh(const Mesh &mesh) {
 
 void Instance::buffer_instances(const std::vector<glm::vec3> &rotations,
                                 const std::vector<glm::vec3> &translations,
-                                const std::vector<glm::vec3> &scales) {
+                                const std::vector<float> &scales) {
     assert(rotations.size() == translations.size());
     assert(rotations.size() == scales.size());
 
@@ -121,7 +121,7 @@ void Instance::buffer_instances(const std::vector<glm::vec3> &rotations,
         GL_ARRAY_BUFFER, translations.size() * sizeof(glm::vec3), &translations[0], GL_STATIC_DRAW);
     // Scales
     glBindBuffer(GL_ARRAY_BUFFER, sbo_);
-    glBufferData(GL_ARRAY_BUFFER, scales.size() * sizeof(glm::vec3), &scales[0], GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, scales.size() * sizeof(float), &scales[0], GL_STATIC_DRAW);
 }
 
 void Instance::render(const Camera &camera) const {

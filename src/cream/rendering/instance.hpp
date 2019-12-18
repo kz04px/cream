@@ -19,7 +19,7 @@ class Instance {
     void buffer_mesh(const Mesh &mesh);
     void buffer_instances(const std::vector<glm::vec3> &rotations,
                           const std::vector<glm::vec3> &translations,
-                          const std::vector<glm::vec3> &scales);
+                          const std::vector<float> &scales);
     void render(const Camera &camera) const;
 
    private:
