@@ -35,7 +35,8 @@ void Mesh::clear() {
     normals_.clear();
 }
 
-void Mesh::load_obj(const std::string &path) {
+void Mesh::load_obj(const std::string &directory, const std::string &filename) {
+    const std::string path = directory + "/" + filename;
     std::ifstream file(path);
     if (!file.is_open()) {
         clog::Log::get()->warn(".obj file ", path, " not found.");
@@ -63,7 +64,7 @@ void Mesh::load_obj(const std::string &path) {
 
         if (word == "mtllib") {
             iss >> word1;
-            materials.load("./models/" + word1);
+            materials.load(directory + "/" + word1);
             materials.print();
         } else if (word == "usemtl") {
             iss >> word1;
