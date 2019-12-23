@@ -178,7 +178,7 @@ void LinuxWindow::update() {
 }
 
 void LinuxWindow::clear() {
-    glClearColor(0.529, 0.808, 0.922, 1.0);
+    glClearColor(clear_colour_.r, clear_colour_.g, clear_colour_.b, clear_colour_.a);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }
 

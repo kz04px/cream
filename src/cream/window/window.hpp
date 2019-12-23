@@ -4,6 +4,7 @@
 #include <cstring>
 #include <functional>
 #include <memory>
+#include "../colour.hpp"
 
 namespace cream {
 
@@ -22,7 +23,8 @@ struct WindowData {
 
 class Window {
    public:
-    Window(){};
+    Window() {
+    }
     virtual void update() = 0;
     void set_callback(const std::function<void(Event &)> &func) {
         data_.callback_ = func;
@@ -48,12 +50,16 @@ class Window {
         return data_.fullscreen_;
     }
     virtual void resize(const int w, const int h) = 0;
+    void set_clear_colour(const Colour &colour) noexcept {
+        clear_colour_ = colour;
+    }
 
     virtual void hide_mouse() {};
     virtual void show_mouse() {};
 
    protected:
     WindowData data_;
+    Colour clear_colour_;
 };
 
 }  // namespace cream

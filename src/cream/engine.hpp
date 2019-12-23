@@ -30,6 +30,9 @@ class Engine {
     void stop();
     void update();
     void print() const;
+    void set_clear_colour(const Colour &colour) noexcept {
+        window_.set_clear_colour(colour);
+    }
     // Events
     void on_event(Event &e);
     bool on_key_press(KeyPressEvent &e);
