@@ -64,6 +64,7 @@ void Mesh::load_obj(const std::string &directory, const std::string &filename) {
 
         if (word == "mtllib") {
             iss >> word1;
+            clog::Log::get()->info("Loading material file ", directory, "/", word1, "\"");
             materials.load(directory + "/" + word1);
             materials.print();
         } else if (word == "usemtl") {

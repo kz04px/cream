@@ -4,12 +4,14 @@
 #include <fstream>
 #include <glm/gtx/string_cast.hpp>  // glm::to_string
 #include <iostream>
+#include "clog/clog.hpp"
 
 namespace cream {
 
 void Materials::load(const std::string &path) {
     std::ifstream file(path);
     if (!file.is_open()) {
+        clog::Log::get()->warn("Couldn't find file \"", path, "\"");
         return;
     }
 
@@ -63,6 +65,11 @@ void Materials::load(const std::string &path) {
         add(material);
         material = Material();
     }
+
+    clog::Log::get()->info("Loaded materials from ", path);
+    for (auto const &[key, mat] : materials_) {
+        clog::Log::get()->info("-- ", mat.name_);
+    }
 }
 
 void Materials::add(Material &material) {
@@ -84,6 +91,7 @@ Material &Materials::find(const std::string &name) {
     }
 
     // If we can't find the material specified, return the default
+    clog::Log::get()->warn("Couldn't find material \"", name, "\"");
     return basic_;
 }
 

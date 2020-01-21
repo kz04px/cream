@@ -17,7 +17,7 @@ Program::~Program() {
 
 void Program::link() {
     glLinkProgram(program_);
-
+    clog::Log::get()->info("Program ", value(), " linked");
     linked_ = true;
 }
 
