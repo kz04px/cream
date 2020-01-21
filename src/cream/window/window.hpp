@@ -54,8 +54,11 @@ class Window {
         clear_colour_ = colour;
     }
 
-    virtual void hide_mouse() {};
-    virtual void show_mouse() {};
+    virtual void hide_mouse() {
+    }
+
+    virtual void show_mouse() {
+    }
 
    protected:
     WindowData data_;
