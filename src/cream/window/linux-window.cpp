@@ -102,10 +102,17 @@ void callback_keyboard(GLFWwindow *window, int key, int scancode, int action, in
     }
 }
 
+void callback_error(int error_code, const char *description) {
+    clog::Log::get()->error(description, " (", error_code, ")");
+}
+
 LinuxWindow::LinuxWindow(const std::string &title, const int width, const int height) {
     data_.title_ = title;
     data_.width_ = width;
     data_.height_ = height;
+
+    // Set callbacks -- Errors
+    glfwSetErrorCallback(callback_error);
 
     bool success = glfwInit();
     if (!success) {
