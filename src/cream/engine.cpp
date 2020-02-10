@@ -28,13 +28,13 @@ void Engine::on_event(Event &e) {
     switch (e.type()) {
         case EventType::KeyPressEvent:
             on_key_press(static_cast<KeyPressEvent &>(e));
-            return;
+            break;
         case EventType::KeyReleaseEvent:
             on_key_release(static_cast<KeyReleaseEvent &>(e));
-            return;
+            break;
         case EventType::WindowCloseEvent:
             on_window_close(static_cast<WindowCloseEvent &>(e));
-            return;
+            break;
         case EventType::WindowResizeEvent:
             on_window_resize(static_cast<WindowResizeEvent &>(e));
             break;
