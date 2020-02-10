@@ -132,6 +132,8 @@ void Instance::render(const Camera &camera) const {
         return;
     }
 
+    program_.use();
+
     glm::mat4 view = camera.matrix();
     glUniformMatrix4fv(0, 1, GL_FALSE, glm::value_ptr(view));
     glBindVertexArray(vao_);
