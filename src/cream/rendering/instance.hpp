@@ -12,6 +12,8 @@ namespace cream {
 class Mesh;
 class Camera;
 
+namespace renderer {
+
 class Instance {
    public:
     Instance();
@@ -37,6 +39,8 @@ class Instance {
     // Program
     Program program_;
 };
+
+}  // namespace renderer
 
 }  // namespace cream
 

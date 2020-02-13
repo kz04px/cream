@@ -6,6 +6,8 @@
 
 namespace cream {
 
+namespace renderer {
+
 Instance::Instance() {
     // Program
     auto vs = Shader::from_file(ShaderType::VERTEX_SHADER,
@@ -139,5 +141,7 @@ void Instance::render(const Camera &camera) const {
     glBindVertexArray(vao_);
     glDrawArraysInstanced(GL_TRIANGLES, 0, num_vertices_, num_instances_);
 }
+
+}  // namespace renderer
 
 }  // namespace cream
