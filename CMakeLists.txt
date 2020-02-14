@@ -9,8 +9,8 @@ find_package(GLEW REQUIRED)
 find_package(OpenGL REQUIRED)
 
 # Base directory relative includes
-include_directories(./src/)
-include_directories(./include/)
+include_directories(src)
+include_directories(include)
 
 # Flags
 set(CMAKE_CXX_STANDARD 17)
@@ -36,6 +36,7 @@ add_library(
     src/cream/programs/programs.cpp
     src/cream/rendering/instance.cpp
     src/cream/shaders/shaders.cpp
+    src/cream/texture.cpp
     src/cream/window/linux-window.cpp
 )
 
