@@ -37,6 +37,18 @@ void Shader::load_text(const ShaderType &type, const std::string &text) {
     type_ = type;
     glShaderSource(value_, 1, &source, &length);
     glCompileShader(value_);
+
+    if (valid()) {
+        clog::Log::get()->info("Shader compilation successful");
+    } else {
+        GLint maxLength = 0;
+        glGetShaderiv(value_, GL_INFO_LOG_LENGTH, &maxLength);
+
+        GLchar infoLog[maxLength];
+        glGetShaderInfoLog(value_, maxLength, &maxLength, &infoLog[0]);
+
+        clog::Log::get()->fatal("Compilation error: ", std::string(infoLog));
+    }
 }
 
 void Shader::load_file(const ShaderType &type, const std::string &path) {
@@ -62,11 +74,6 @@ GLuint Shader::value() const {
 bool Shader::valid() const {
     GLint status;
     glGetShaderiv(value_, GL_COMPILE_STATUS, &status);
-
-    if (status == GL_FALSE) {
-        clog::Log::get()->error("Shader error ", status);
-    }
-
     return status == GL_TRUE;
 }
 
