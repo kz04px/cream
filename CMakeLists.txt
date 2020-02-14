@@ -35,6 +35,9 @@ add_library(
     src/cream/models/mesh.cpp
     src/cream/programs/programs.cpp
     src/cream/rendering/instance.cpp
+    src/cream/rendering/line.cpp
+    src/cream/rendering/model.cpp
+    src/cream/rendering/tmodel.cpp
     src/cream/shaders/shaders.cpp
     src/cream/texture.cpp
     src/cream/window/linux-window.cpp
