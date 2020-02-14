@@ -33,6 +33,7 @@ void Mesh::clear() {
     vertices_.clear();
     colours_.clear();
     normals_.clear();
+    uvs_.clear();
 }
 
 void Mesh::load_obj(const std::string &directory, const std::string &filename) {
@@ -141,6 +142,10 @@ void Mesh::load_obj(const std::string &directory, const std::string &filename) {
                         vertices_.push_back(v[v_index[j] - 1]);
                         colours_.push_back(material.kd_);
 
+                        if (vt_index[j] > 0) {
+                            uvs_.push_back(vt[vt_index[j] - 1]);
+                        }
+
                         if (vn_index[j] > 0) {
                             normals_.push_back(vn[vn_index[j] - 1]);
                         } else {
@@ -158,11 +163,11 @@ void Mesh::load_obj(const std::string &directory, const std::string &filename) {
     }
 
     num_vertices_ = vertices_.size();
-    v.clear();
-    vt.clear();
-    vn.clear();
 
-    clog::Log::get()->info(num_vertices_, " vertices loaded.");
+    clog::Log::get()->info("-- v  ", vertices_.size());
+    clog::Log::get()->info("-- uv ", uvs_.size());
+    clog::Log::get()->info("-- vn ", normals_.size());
+    clog::Log::get()->info("-- vc ", colours_.size());
 }
 
 }  // namespace cream
