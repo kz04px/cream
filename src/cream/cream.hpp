@@ -11,5 +11,9 @@
 #include "layers/layer.hpp"
 #include "models/mesh.hpp"
 #include "rendering/instance.hpp"
+#include "rendering/line.hpp"
+#include "rendering/model.hpp"
+#include "rendering/tmodel.hpp"
+#include "texture.hpp"
 
 #endif
