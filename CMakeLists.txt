@@ -43,14 +43,14 @@ add_library(
     src/cream/window/linux-window.cpp
 )
 
-# Add the test executable
+# Add an example executable
 add_executable(
-    example
-    src/example/main.cpp
+    basic
+    examples/basic/main.cpp
 )
 
 target_link_libraries(cream glfw)
 target_link_libraries(cream GLEW)
 target_link_libraries(cream OpenGL)
 
-target_link_libraries(example cream)
+target_link_libraries(basic cream)
