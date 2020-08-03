@@ -14,7 +14,7 @@
 
 namespace cream {
 
-Engine::Engine() : window_("3D Game Engine", 480, 480) {
+Engine::Engine() : window_("Cream Game Engine", 480, 480) {
     std::cout << "Version: " << version_major << "." << version_minor << "\n";
     std::cout << "Author: " << author << "\n";
     std::cout << "URL: " << url << "\n";
