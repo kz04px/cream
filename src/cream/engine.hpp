@@ -2,12 +2,14 @@
 #define CREAM_ENGINE_HPP
 
 #include <string>
+#include "colour.hpp"
 #include "layers/layer-manager.hpp"
 #include "window/linux-window.hpp"
 
 namespace cream {
 
 class Event;
+class Layer;
 class MouseDownEvent;
 class MouseUpEvent;
 class KeyPressEvent;

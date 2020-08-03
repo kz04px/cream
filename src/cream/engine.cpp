@@ -10,6 +10,7 @@
 #include "events/mouse-event.hpp"
 #include "events/window-event.hpp"
 #include "input.hpp"
+#include "layers/layer.hpp"
 #include "renderer/renderer2d.hpp"
 #include "window/linux-window.hpp"
 
