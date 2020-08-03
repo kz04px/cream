@@ -1,10 +1,10 @@
 #include "engine.hpp"
 #include <bits/stdc++.h>
 #include <cassert>
+#include <clog/clog.hpp>
 #include <ctime>
 #include <iostream>
 #include <sstream>
-#include "clog/clog.hpp"
 #include "events/event.hpp"
 #include "events/keyboard-event.hpp"
 #include "events/mouse-event.hpp"

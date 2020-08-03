@@ -1,7 +1,7 @@
 #define STB_IMAGE_IMPLEMENTATION
 #include "texture.hpp"
 #include <stb/stb_image.h>
-#include "clog/clog.hpp"
+#include <clog/clog.hpp>
 
 namespace cream {
 

@@ -1,7 +1,7 @@
 #include "programs.hpp"
 #include <algorithm>
+#include <clog/clog.hpp>
 #include "../shaders/shaders.hpp"
-#include "clog/clog.hpp"
 
 namespace cream {
 

@@ -1,10 +1,10 @@
 #define GLM_ENABLE_EXPERIMENTAL
 #include "mesh.hpp"
+#include <clog/clog.hpp>
 #include <fstream>
 #include <glm/gtx/string_cast.hpp>  // glm::to_string
 #include <iostream>
 #include <sstream>
-#include "clog/clog.hpp"
 #include "materials.hpp"
 
 namespace cream {

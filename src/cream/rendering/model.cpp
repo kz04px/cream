@@ -1,10 +1,9 @@
 #include "model.hpp"
+#include <clog/clog.hpp>
 #include <glm/gtc/type_ptr.hpp>
-#include <iostream>
 #include "../camera/camera.hpp"
 #include "../models/mesh.hpp"
 #include "../shaders/shaders.hpp"
-#include "clog/clog.hpp"
 
 namespace cream {
 

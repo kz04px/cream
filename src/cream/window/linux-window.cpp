@@ -2,12 +2,12 @@
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 #include <cassert>
+#include <clog/clog.hpp>
 #include <iostream>
 #include "../events/keyboard-event.hpp"
 #include "../events/mouse-event.hpp"
 #include "../events/window-event.hpp"
 #include "../keys.hpp"
-#include "clog/clog.hpp"
 
 namespace cream {
 

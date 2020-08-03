@@ -1,9 +1,9 @@
 #include "shaders.hpp"
 #include <cassert>
+#include <clog/clog.hpp>
 #include <fstream>
 #include <sstream>
 #include <string>
-#include "clog/clog.hpp"
 
 namespace cream {
 

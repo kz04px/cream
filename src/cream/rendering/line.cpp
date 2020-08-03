@@ -1,8 +1,8 @@
 #include "line.hpp"
+#include <clog/clog.hpp>
 #include <glm/gtc/type_ptr.hpp>
 #include "../camera/camera.hpp"
 #include "../shaders/shaders.hpp"
-#include "clog/clog.hpp"
 
 namespace cream {
 
