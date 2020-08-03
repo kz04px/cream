@@ -145,6 +145,8 @@ void Engine::print() const {
 
 void Engine::push_layer(Layer *layer) {
     layer_manager_.push_layer(layer);
+    auto e = WindowResizeEvent(window_.width(), window_.height());
+    layer->on_event(e);
 }
 
 void Engine::update() {
