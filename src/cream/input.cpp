@@ -4,7 +4,8 @@ namespace cream {
 
 namespace inputs {
 
-bool key_states[512];
+std::array<bool, 512> keyboard_states;
+std::array<bool, 8> mouse_states;
 
 }  // namespace inputs
 

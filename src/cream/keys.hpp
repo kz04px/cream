@@ -3,6 +3,13 @@
 
 namespace cream {
 
+enum Mouse : int
+{
+    LEFT = 0,
+    RIGHT,
+    MIDDLE
+};
+
 enum Keys : int
 {
     CREAM_KEY_NONE = 0,

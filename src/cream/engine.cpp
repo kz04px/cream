@@ -32,6 +32,12 @@ void Engine::on_event(Event &e) {
         case EventType::KeyReleaseEvent:
             on_key_release(static_cast<KeyReleaseEvent &>(e));
             break;
+        case EventType::MouseDownEvent:
+            on_mouse_down(static_cast<MouseDownEvent &>(e));
+            break;
+        case EventType::MouseUpEvent:
+            on_mouse_up(static_cast<MouseUpEvent &>(e));
+            break;
         case EventType::WindowCloseEvent:
             on_window_close(static_cast<WindowCloseEvent &>(e));
             break;
@@ -45,15 +51,25 @@ void Engine::on_event(Event &e) {
     layer_manager_.pass_event(e);
 }
 
+bool Engine::on_mouse_down(MouseDownEvent &e) {
+    inputs::mouse_states[e.button()] = true;
+    return true;
+}
+
+bool Engine::on_mouse_up(MouseUpEvent &e) {
+    inputs::mouse_states[e.button()] = false;
+    return true;
+}
+
 bool Engine::on_key_press(KeyPressEvent &e) {
     assert(0 <= e.key() && e.key() < 512);
-    inputs::key_states[e.key()] = true;
+    inputs::keyboard_states[e.key()] = true;
     return true;
 }
 
 bool Engine::on_key_release(KeyReleaseEvent &e) {
     assert(0 <= e.key() && e.key() < 512);
-    inputs::key_states[e.key()] = false;
+    inputs::keyboard_states[e.key()] = false;
     return true;
 }
 

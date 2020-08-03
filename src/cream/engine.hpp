@@ -8,6 +8,8 @@
 namespace cream {
 
 class Event;
+class MouseDownEvent;
+class MouseUpEvent;
 class KeyPressEvent;
 class KeyReleaseEvent;
 class WindowCloseEvent;
@@ -35,6 +37,8 @@ class Engine {
     }
     // Events
     void on_event(Event &e);
+    bool on_mouse_down(MouseDownEvent &e);
+    bool on_mouse_up(MouseUpEvent &e);
     bool on_key_press(KeyPressEvent &e);
     bool on_key_release(KeyReleaseEvent &e);
     bool on_window_close(WindowCloseEvent &e);
