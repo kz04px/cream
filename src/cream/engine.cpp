@@ -15,6 +15,11 @@
 namespace cream {
 
 Engine::Engine() : window_("3D Game Engine", 480, 480) {
+    std::cout << "Version: " << version_major << "." << version_minor << "\n";
+    std::cout << "Author: " << author << "\n";
+    std::cout << "URL: " << url << "\n";
+    std::cout << "About: " << about << "\n";
+
     clog::Log::get()->info("Engine loaded");
     start_ = time(0);
     window_.set_callback(std::bind(&Engine::on_event, this, std::placeholders::_1));
