@@ -1,5 +1,5 @@
-#ifndef WINDOW_EVENT_HPP_INCLUDED
-#define WINDOW_EVENT_HPP_INCLUDED
+#ifndef CREAM_WINDOW_EVENT_HPP
+#define CREAM_WINDOW_EVENT_HPP
 
 #include "event.hpp"
 

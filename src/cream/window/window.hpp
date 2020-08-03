@@ -1,5 +1,5 @@
-#ifndef WINDOW_HPP_INCLUDED
-#define WINDOW_HPP_INCLUDED
+#ifndef CREAM_WINDOW_HPP
+#define CREAM_WINDOW_HPP
 
 #include <cstring>
 #include <functional>

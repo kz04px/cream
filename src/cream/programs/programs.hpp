@@ -1,5 +1,5 @@
-#ifndef PROGRAMS_HPP_INCLUDED
-#define PROGRAMS_HPP_INCLUDED
+#ifndef CREAM_PROGRAMS_HPP
+#define CREAM_PROGRAMS_HPP
 
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>

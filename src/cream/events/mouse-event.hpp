@@ -1,5 +1,5 @@
-#ifndef MOUSE_EVENT_HPP_INCLUDED
-#define MOUSE_EVENT_HPP_INCLUDED
+#ifndef CREAM_MOUSE_EVENT_HPP
+#define CREAM_MOUSE_EVENT_HPP
 
 #include "event.hpp"
 

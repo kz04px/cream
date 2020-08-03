@@ -1,5 +1,5 @@
-#ifndef KEYS_HPP_INCLUDED
-#define KEYS_HPP_INCLUDED
+#ifndef CREAM_KEYS_HPP
+#define CREAM_KEYS_HPP
 
 namespace cream {
 

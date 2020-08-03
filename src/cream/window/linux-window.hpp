@@ -1,5 +1,5 @@
-#ifndef LINUX_WINDOW_HPP_INCLUDED
-#define LINUX_WINDOW_HPP_INCLUDED
+#ifndef CREAM_LINUX_WINDOW_HPP
+#define CREAM_LINUX_WINDOW_HPP
 
 #include <string>
 #include "window.hpp"

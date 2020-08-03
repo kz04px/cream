@@ -1,5 +1,5 @@
-#ifndef CAMERA_HPP
-#define CAMERA_HPP
+#ifndef CREAM_CAMERA_HPP
+#define CREAM_CAMERA_HPP
 
 #include <glm/glm.hpp>
 

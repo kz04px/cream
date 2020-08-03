@@ -1,5 +1,5 @@
-#ifndef MESH_HPP_INCLUDED
-#define MESH_HPP_INCLUDED
+#ifndef CREAM_MESH_HPP
+#define CREAM_MESH_HPP
 
 #include <glm/glm.hpp>
 #include <string>

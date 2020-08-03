@@ -1,5 +1,5 @@
-#ifndef ENGINE_HPP_INCLUDED
-#define ENGINE_HPP_INCLUDED
+#ifndef CREAM_ENGINE_HPP
+#define CREAM_ENGINE_HPP
 
 #include <string>
 #include "layers/layer-manager.hpp"

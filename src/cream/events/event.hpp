@@ -1,5 +1,5 @@
-#ifndef EVENT_HPP_INCLUDED
-#define EVENT_HPP_INCLUDED
+#ifndef CREAM_EVENT_HPP
+#define CREAM_EVENT_HPP
 
 #include <functional>
 #include <string>

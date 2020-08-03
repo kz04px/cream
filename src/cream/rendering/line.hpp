@@ -1,5 +1,5 @@
-#ifndef LINE_HPP_INCLUDED
-#define LINE_HPP_INCLUDED
+#ifndef CREAM_LINE_HPP
+#define CREAM_LINE_HPP
 
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>

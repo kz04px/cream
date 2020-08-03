@@ -1,5 +1,5 @@
-#ifndef SHADERS_HPP_INCLUDED
-#define SHADERS_HPP_INCLUDED
+#ifndef CREAM_SHADERS_HPP
+#define CREAM_SHADERS_HPP
 
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>

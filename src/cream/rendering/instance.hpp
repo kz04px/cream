@@ -1,5 +1,5 @@
-#ifndef INSTANCE_HPP_INCLUDED
-#define INSTANCE_HPP_INCLUDED
+#ifndef CREAM_INSTANCE_HPP
+#define CREAM_INSTANCE_HPP
 
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>

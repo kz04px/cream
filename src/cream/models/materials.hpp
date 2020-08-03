@@ -1,5 +1,5 @@
-#ifndef MATERIALS_HPP_INCLUDED
-#define MATERIALS_HPP_INCLUDED
+#ifndef CREAM_MATERIALS_HPP
+#define CREAM_MATERIALS_HPP
 
 #include <glm/glm.hpp>
 #include <string>

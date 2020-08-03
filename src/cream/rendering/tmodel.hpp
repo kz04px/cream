@@ -1,5 +1,5 @@
-#ifndef RENDERER_TMODEL_HPP
-#define RENDERER_TMODEL_HPP
+#ifndef CREAM_RENDERER_TMODEL_HPP
+#define CREAM_RENDERER_TMODEL_HPP
 
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>

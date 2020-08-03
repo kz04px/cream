@@ -1,5 +1,5 @@
-#ifndef CAMERA_TOP_DOWN_HPP
-#define CAMERA_TOP_DOWN_HPP
+#ifndef CREAM_CAMERA_TOP_DOWN_HPP
+#define CREAM_CAMERA_TOP_DOWN_HPP
 
 #include <glm/glm.hpp>
 #include "camera.hpp"

@@ -1,5 +1,5 @@
-#ifndef LAYERS_HPP_INCLUDED
-#define LAYERS_HPP_INCLUDED
+#ifndef CREAM_LAYERS_HPP
+#define CREAM_LAYERS_HPP
 
 namespace cream {
 
