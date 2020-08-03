@@ -1,8 +1,11 @@
 #include <cream/cream.hpp>
+#include "layer.hpp"
 
 class Game : public cream::Engine {
    public:
     Game() {
+        set_clear_colour(cream::Colour::sky_blue());
+        push_layer(new GameLayer());
     }
 };
 
