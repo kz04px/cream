@@ -1,4 +1,5 @@
 #include "instance.hpp"
+#include <clog/clog.hpp>
 #include <glm/gtc/type_ptr.hpp>
 #include "../camera/camera.hpp"
 #include "../models/mesh.hpp"
@@ -9,6 +10,8 @@ namespace cream {
 namespace renderer {
 
 Instance::Instance() {
+    clog::Log::get()->info("Create instance renderer");
+
     // Program
     auto vs = Shader::from_file(ShaderType::VERTEX_SHADER,
                                 "./resources/shaders/instance/vertex_shader.glsl");

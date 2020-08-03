@@ -150,6 +150,8 @@ LinuxWindow::LinuxWindow(const std::string &title, const int width, const int he
     // Start GLEW extension handler
     glewExperimental = GL_TRUE;
     GLenum err = glewInit();
+    clog::Log::get()->info("glewInit()");
+
     while ((err = glGetError()) != GL_NO_ERROR) {
         clog::Log::get()->warn("glewInit() error ", err);
     }
@@ -157,8 +159,10 @@ LinuxWindow::LinuxWindow(const std::string &title, const int width, const int he
 
 LinuxWindow::~LinuxWindow() {
     if (window_) {
+        clog::Log::get()->info("glfwDestroyWindow()");
         glfwDestroyWindow(window_);
     }
+    clog::Log::get()->info("glfwTerminate()");
     glfwTerminate();
 }
 

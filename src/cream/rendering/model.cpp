@@ -10,6 +10,8 @@ namespace cream {
 namespace renderer {
 
 Model::Model() {
+    clog::Log::get()->info("Create model renderer");
+
     // Program
     auto vs = Shader::from_file(ShaderType::VERTEX_SHADER,
                                 "./resources/shaders/model/vertex_shader.glsl");

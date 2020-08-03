@@ -51,9 +51,12 @@ void Program::detach(const Shader &shader) {
 }
 
 void Program::use() const {
-    if (linked_) {
-        glUseProgram(program_);
+    if (!linked_) {
+        clog::Log::get()->error("Tried to use unlinked program (", value(), ")");
+        return;
     }
+
+    glUseProgram(program_);
 }
 
 GLuint Program::value() const {

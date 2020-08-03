@@ -10,6 +10,8 @@ namespace cream {
 namespace renderer {
 
 TModel::TModel() {
+    clog::Log::get()->info("Create tmodel renderer");
+
     // Program
     auto vs = Shader::from_file(ShaderType::VERTEX_SHADER,
                                 "./resources/shaders/tmodel/vertex_shader.glsl");

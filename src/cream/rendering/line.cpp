@@ -9,6 +9,8 @@ namespace cream {
 namespace renderer {
 
 Line::Line() {
+    clog::Log::get()->info("Create line renderer");
+
     // Program
     auto vs =
         Shader::from_file(ShaderType::VERTEX_SHADER, "./resources/shaders/line/vertex_shader.glsl");
