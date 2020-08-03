@@ -180,15 +180,14 @@ void Renderer2D::draw_quad(const glm::vec2 &pos,
 }
 
 void Renderer2D::draw_quad(const glm::vec3 &pos, const glm::vec2 &size, const Colour &c) {
+    if (weow->buffer_index + 6 > weow->max_buffer_size) {
+        flush();
+    }
+
     for (const auto &n : quad_vertices) {
         weow->m_data[weow->buffer_index].position = pos + n;
         weow->m_data[weow->buffer_index].colour = c;
-
         weow->buffer_index++;
-    }
-
-    if (weow->buffer_index >= weow->max_buffer_size) {
-        flush();
     }
 }
 
