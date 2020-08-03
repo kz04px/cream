@@ -34,6 +34,7 @@ add_library(
     src/cream/models/materials.cpp
     src/cream/models/mesh.cpp
     src/cream/programs/programs.cpp
+    src/cream/renderer/renderer2d.cpp
     src/cream/rendering/instance.cpp
     src/cream/rendering/line.cpp
     src/cream/rendering/model.cpp

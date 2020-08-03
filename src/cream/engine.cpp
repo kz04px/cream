@@ -10,6 +10,7 @@
 #include "events/mouse-event.hpp"
 #include "events/window-event.hpp"
 #include "input.hpp"
+#include "renderer/renderer2d.hpp"
 #include "window/linux-window.hpp"
 
 namespace cream {
@@ -23,10 +24,12 @@ Engine::Engine() : window_("Cream Game Engine", 480, 480) {
     clog::Log::get()->info("Engine loaded");
     start_ = time(0);
     window_.set_callback(std::bind(&Engine::on_event, this, std::placeholders::_1));
+    Renderer2D::init();
 }
 
 Engine::~Engine() {
     clog::Log::get()->info("Engine exited");
+    Renderer2D::shutdown();
 }
 
 void Engine::on_event(Event &e) {

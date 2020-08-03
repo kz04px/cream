@@ -11,6 +11,7 @@
 #include "keys.hpp"
 #include "layers/layer.hpp"
 #include "models/mesh.hpp"
+#include "renderer/renderer2d.hpp"
 #include "rendering/instance.hpp"
 #include "rendering/line.hpp"
 #include "rendering/model.hpp"
