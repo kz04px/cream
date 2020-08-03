@@ -2,6 +2,7 @@
 #define CREAM_HPP
 
 #include "camera/fps.hpp"
+#include "camera/topdown.hpp"
 #include "ecs.hpp"
 #include "engine.hpp"
 #include "events/keyboard-event.hpp"
