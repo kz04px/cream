@@ -102,15 +102,15 @@ struct Asd {
     std::array<VertexData, max_buffer_size> m_data;
 };
 
-constexpr const std::array<glm::vec3, 6> quad_vertices = {{
+constexpr const std::array<glm::vec2, 6> quad_vertices = {{
     // Triangle 1
-    {-0.5f, -0.5f, 0.0f},  // p0
-    {-0.5f, 0.5f, 0.0f},   // p1
-    {0.5f, 0.5f, 0.0f},    // p2
+    {0.0f, 0.0f},  // p0
+    {0.0f, 1.0f},  // p1
+    {1.0f, 1.0f},  // p2
     // Triangle 2
-    {-0.5f, -0.5f, 0.0f},  // p0
-    {0.5f, 0.5f, 0.0f},    // p2
-    {0.5f, -0.5f, 0.0f},   // p3
+    {0.0f, 0.0f},  // p0
+    {1.0f, 1.0f},  // p2
+    {1.0f, 0.0f},  // p3
 }};
 static std::unique_ptr<Asd> weow;
 
@@ -185,7 +185,8 @@ void Renderer2D::draw_quad(const glm::vec3 &pos, const glm::vec2 &size, const Co
     }
 
     for (const auto &n : quad_vertices) {
-        weow->m_data[weow->buffer_index].position = pos + n;
+        weow->m_data[weow->buffer_index].position =
+            pos + glm::vec3{n.x * size.x, n.y * size.y, 0.0f};
         weow->m_data[weow->buffer_index].colour = c;
         weow->buffer_index++;
     }
