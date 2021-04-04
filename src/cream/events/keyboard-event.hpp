@@ -76,13 +76,13 @@ class KeyRepeatEvent : public Event {
     std::string string() const override {
         return "KeyRepeatEvent";
     }
-    int key() const{
+    int key() const {
         return key_;
     }
-    int scancode() const{
+    int scancode() const {
         return scancode_;
     }
-    int mods()const {
+    int mods() const {
         return mods_;
     }
 
