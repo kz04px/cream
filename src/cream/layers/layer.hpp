@@ -17,7 +17,7 @@ class Layer {
     }
     virtual void on_update() {
     }
-    virtual void on_event(Event &event) {
+    virtual void on_event(Event &) {
     }
     void enable() {
         enabled_ = true;
